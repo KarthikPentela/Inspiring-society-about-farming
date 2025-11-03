@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Daily Market Price Updates — Green Fields</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9fdf9;
+      color: #333;
+    }
+
+    header {
+      background: #2b8a3e;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    p {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #444;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #eaeaea;
+      text-align: left;
+      font-size: 15px;
+    }
+
+    th {
+      background: #1ae707;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 14px;
+    }
+
+    tr:hover td {
+      background: #f1f8f3;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #2b8a3e;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top: 20px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #256d32;
+    }
+
+    .loading {
+      margin-top: 20px;
+      font-style: italic;
+      color: #666;
+    }
+
+    .error {
+      margin-top: 20px;
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p>Check the latest average prices of crops (live data from Data.gov.in):</p>
+
+    <table id="priceTable">
+      <tr><th>Crop</th><th>Price (₹/quintal)</th><th>Market</th></tr>
+    </table>
+
+    <p id="status" class="loading">Loading latest prices...</p>
+  </div>
+
+  <script>
+    async function loadPrices() {
+      const status = document.getElementById("status");
+      const table = document.getElementById("priceTable");
+
+      // Sample API key (replace with your own for higher limits)
+      const apiKey = "579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b";
+
+      // API URL (fetch 10 records, you can add filters like &filters[state.keyword]=Telangana)
+      const url = `https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key=${apiKey}&format=json&limit=10`;
+
+      const response = await fetch(url);
+      const jsonData = await response.json();
+
+      // Clear status
+      status.textContent = "";
+
+      const records = jsonData.records || [];
+
+      if (records.length === 0) {
+        status.textContent = "No price data available right now.";
+        return;
+      }
+
+      records.forEach(item => {
+        const crop = item.commodity || "-";
+        const price = item.modal_price || "-";
+        const market = item.market || "-";
+
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${crop}</td>
+          <td>${price}</td>
+          <td>${market}</td>
+        `;
+        table.appendChild(row);
+      });
+    }
+
+    // Run on page load
+    loadPrices();
+  </script>
+</body>
+</html>

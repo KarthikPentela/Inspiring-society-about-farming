@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pest Management Tips — Green Fields</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9fdf9;
+      color: #333;
+    }
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 15px;
+    }
+    section {
+      background: #fff;
+      border: 1px solid #d8efd8;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 25px;
+      margin-bottom: 20px;
+    }
+    section h2 {
+      color: #fc0202;
+      margin-bottom: 10px;
+    }
+    section ul {
+      padding-left: 20px;
+    }
+    section li {
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+    .btn {
+      display: inline-block;
+      background: #2b8a3e;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #256d32;
+    }
+    .last-updated {
+      font-size: 14px;
+      color: #555;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <section id="pest-tips">
+      <h2>Recommended Pest Management Practices</h2>
+      <ul id="pest-tips-list">
+        <li>Loading pest management tips...</li>
+      </ul>
+    </section>
+  </div>
+
+  <script>
+    const pestData = [
+      {tip: "Regularly monitor crops for early signs of pest infestation."},
+      {tip: "Use integrated pest management (IPM) combining biological, cultural, and chemical methods."},
+      {tip: "Introduce natural predators like ladybugs and spiders to control harmful insects."},
+      {tip: "Rotate crops to reduce pest buildup in the soil."},
+      {tip: "Use pheromone traps and sticky traps to detect and reduce pest populations."},
+      {tip: "Apply organic pesticides like neem oil or bio-pesticides when necessary."},
+      {tip: "Maintain proper field sanitation by removing infected plants and weeds."},
+      {tip: "Avoid excessive use of chemical fertilizers which can attract pests."},
+      {tip: "Follow recommended spraying schedules and dosages carefully."},
+      {tip: "Consult local agriculture officers for region-specific pest control advice."}
+    ];
+
+    function populatePestTips() {
+      const list = document.getElementById('pest-tips-list');
+      list.innerHTML = '';
+
+      pestData.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item.tip;
+        list.appendChild(li);
+      });
+    }
+
+    window.onload = populatePestTips;
+  </script>
+
+</body>
+</html>
