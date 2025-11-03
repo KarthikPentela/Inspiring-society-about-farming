@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Inspiring Society about Farming — Portal</title>
+  <meta name="description" content="Inspiring Society about Farming portal: guides, market prices, pest management, government schemes and login." />
+  <style>
+    :root{
+      --green:#2b8a3e;
+      --muted:#5b6460;
+      --bg:#f6fbf6;
+      --card:#ffffff;
+      --radius:12px;
+      --maxw:1100px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:#0f172a;
+      -webkit-font-smoothing:antialiased;
+      line-height:1.5;
+    }
+    header{
+      background:linear-gradient(90deg,var(--green), #16a34a 140%);
+      color:white;
+      padding:18px;
+      position:sticky;
+      top:0;
+      z-index:30;
+    }
+    .wrap{max-width:var(--maxw);margin:20px auto;padding:0 16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:48px;height:48px;border-radius:10px;background:rgba(255,255,255,0.12);
+      display:flex;align-items:center;justify-content:center;font-size:22px;
+    }
+    nav{margin-left:auto}
+    nav a{color:white;text-decoration:none;margin-left:16px;font-weight:600}
+    nav a:hover{text-decoration:underline;opacity:0.95}
+
+    .hero{
+      background:linear-gradient(180deg, rgba(11,83,34,0.06), rgba(255,255,255,0.6));
+      border-radius:12px;padding:28px;display:flex;gap:20px;align-items:center;margin:18px 0;
+      box-shadow:0 8px 30px rgba(5,10,7,0.04);
+      flex-wrap:wrap;
+    }
+    .hero .left{flex:1;min-width:260px}
+    .hero h1{margin:0;font-size:28px;color:var(--green)}
+    .hero p{margin:8px 0;color:var(--muted)}
+    .cta {display:inline-block;background:var(--green);color:white;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700;margin-top:8px}
+    .cta:hover{transform:translateY(-2px)}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:14px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(10,12,10,0.04)}
+    .card h3{margin:0 0 8px 0;color:var(--green)}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+    .card a{display:inline-block;margin-top:12px;color:var(--green);text-decoration:none;font-weight:700}
+    .card a:hover{text-decoration:underline}
+
+    footer{max-width:var(--maxw);margin:28px auto;padding:18px;text-align:center;color:var(--muted);font-size:14px}
+    @media (max-width:700px){
+      header{padding:12px}
+      .hero h1{font-size:20px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap" style="display:flex;align-items:center;">
+  <div class="brand" aria-hidden="true">
+        <div class="logo">🌱</div>
+        <div>
+          <div style="font-weight:700">Inspiring Society about Farming</div>
+          <div style="font-size:12px;opacity:0.9">Farmers • Resources • Markets</div>
+        </div>
+      </div>
+
+      <nav>
+        <!-- quick links: adjust filenames if you rename files -->
+        <a href="index.html">Home</a>
+        <a href="soil-health-guide.html">Soil</a>
+        <a href="market-prices.html">Prices</a>
+        <a href="government-schemes.html">Schemes</a>
+        <a href="pest-management.html">Pests</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" role="banner" aria-labelledby="hero-title">
+      <div class="left">
+        <h1 id="hero-title">Practical tools & guides for farmers</h1>
+        <p>Find concise guides, weekly market updates, pest management tips, government schemes and soil-health advice — all in one place.</p>
+        <a class="cta" href="soil-health-guide.html">Open the Soil Health Guide</a>
+      </div>
+      <div style="min-width:220px;">
+        <div style="background:#fff;border-radius:10px;padding:12px;box-shadow:0 6px 14px rgba(10,12,10,0.04)">
+          <strong style="color:var(--green)">Quick actions</strong>
+          <ul style="margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:14px;line-height:1.6">
+            <li><a href="market-prices.html">Check weekly market prices</a></li>
+            <li><a href="government-schemes.html">View government schemes</a></li>
+            <li><a href="pest-management.html">Pest & disease tips</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="resources-title">
+      <h2 id="resources-title" style="color:var(--green);margin:6px 0 12px 0">Featured resources</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Soil Health Guide</h3>
+          <p>Testing, sampling, nutrient management, composting and a printable checklist to keep soil productive.</p>
+          <a href="soil-health-guide.html">Open guide →</a>
+        </article>
+
+        <article class="card">
+          <h3>Weekly Market Prices</h3>
+          <p>Average prices across major markets to help you decide when and where to sell.</p>
+          <a href="market-prices.html">View prices →</a>
+        </article>
+
+        <article class="card">
+          <h3>Pest & Disease Management</h3>
+          <p>Practical measures, crop rotation and biological controls to reduce losses.</p>
+          <a href="pest-management.html">Read tips →</a>
+        </article>
+
+        <article class="card">
+          <h3>Government Schemes</h3>
+          <p>Summaries of support programmes — subsidies, credit and crop insurance options.</p>
+          <a href="government-schemes.html">See schemes →</a>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+  © <span id="year"></span> Inspiring Society about Farming • Built for farmers — local information, practical guidance.
+  </footer>
+
+  <script>
+    // small niceties
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // keyboard shortcut: press "/" to focus search (if you add one later)
+    window.addEventListener('keydown', function(e){
+      if(e.key === '/' && !/INPUT|TEXTAREA/i.test(document.activeElement.tagName)){
+        e.preventDefault();
+        // placeholder for search focus if you add an input with id="search"
+        const s = document.getElementById('search');
+        if(s) s.focus();
+      }
+    });
+  </script>
+</body>
+</html>
